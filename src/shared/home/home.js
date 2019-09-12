@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import NewsList from "./NewsList";
+import ArtworkList from "./artworkList";
 import "isomorphic-fetch";
 
 class News extends Component {
   constructor(props) {
     super(props);
-
+   
     let initialData;
     if (__isBrowser__) {
       initialData = window.__initialData__;
@@ -24,14 +24,22 @@ class News extends Component {
   }
 
   static requestInitialData() {
-    return fetch("http://127.0.0.1:3000/api/news")
-      .then(response => response.json())
+    return fetch("https://v4.yourmasterpieces.in/api/v1/products/artworks/public/pick/?limit=200&offset=0&search=Featured",
+    { 
+      method: 'get', 
+      headers: new Headers({
+        'Authorization': 'pyc4i1TjeauQM9sGXd23j7RXiDsb3AYv', 
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    }
+    )
+      .then(response =>  response.json())
       .catch(error => console.log(error));
   }
 
   render() {
     const { news } = this.state;
-    return <NewsList news={news} />;
+    return <ArtworkList Artworkdata={news} />;
   }
 }
 

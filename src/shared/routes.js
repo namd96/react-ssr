@@ -1,5 +1,6 @@
-import News from "./news/News";
+import Home from "./home/home";
 import Artwork from "./artworks/Artwork";
+import Artist from "./artists/Artist";
 
 const routes = [
   // {
@@ -12,8 +13,12 @@ const routes = [
     component: Artwork
   },
   {
+    path: "/profile/details/:artist_un",
+    component: Artist
+  },
+  {
     path: "/",
-    component: News
+    component: Home
   },
 
 ];

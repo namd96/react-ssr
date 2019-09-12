@@ -6,6 +6,7 @@
   "scripts": {
     "d0": "cross-env NODE_ENV=development webpack -w",
     "d1": "cross-env NODE_ENV=development nodemon server.js",
+    "d11": "cross-env NODE_ENV=development node server.js",
     "p0": "cross-env NODE_ENV=production webpack build",
     "p1": "cross-env NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +24,7 @@
     "path-parser": "^4.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^4.1.2",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.4.15"
